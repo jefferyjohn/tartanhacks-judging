@@ -1,26 +1,26 @@
-import { Button } from "@mui/material"
-import { makeStyles } from "@mui/styles"
-import React, { ReactElement } from "react"
+import { Button } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import React, { ReactElement } from "react";
 
 const useStyles = makeStyles((theme) => ({
   button: {
     background: `linear-gradient(316.54deg, ${theme.palette.lightGradient.start} 35.13%, ${theme.palette.lightGradient.end} 126.39%)`,
     borderRadius: "1em",
     boxShadow: "0px 4px 4px rgba(200, 116, 56, 0.25)",
-    color: theme.palette.textColorDark.main
+    color: theme.palette.text.primary,
   },
-}))
+}));
 
 const RoundedButton = ({
   className,
   children,
-  type
+  type,
 }: {
-  className?: string
-  children?: ReactElement | string
-  type: "button" | "reset" | "submit" | undefined
+  className?: string;
+  children?: ReactElement | string;
+  type: "button" | "reset" | "submit" | undefined;
 }): ReactElement => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <>
       <Button
@@ -31,7 +31,7 @@ const RoundedButton = ({
         {children}
       </Button>
     </>
-  )
-}
+  );
+};
 
-export default RoundedButton
+export default RoundedButton;

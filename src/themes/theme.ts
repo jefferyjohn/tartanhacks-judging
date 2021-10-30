@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material"
-import { green } from "@mui/material/colors"
+import { lightGreen } from "@mui/material/colors"
 
 export const theme = createTheme({
   palette: {
@@ -7,7 +7,7 @@ export const theme = createTheme({
       main: "#F3964A"
     },
     secondary: {
-      main: green[100]
+      main: lightGreen[100]
     },
     gradient: {
       start: "#AA5418",
@@ -21,8 +21,9 @@ export const theme = createTheme({
       start: "#FFFFFF",
       end: "#FFE3E3"
     },
-    textColorDark: {
-      main: "#000"
+    text: {
+      primary: "#AA5418",
+      secondary: "#F3964A"
     }
   },
   typography: {
