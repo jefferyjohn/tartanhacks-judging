@@ -2,7 +2,7 @@
  * Augment the Material-UI styles type to support
  * our custom additional colors in the theme
  */
- declare module "@mui/material/styles" {
+declare module "@mui/material/styles" {
   interface PaletteOptions {
     gradient: {
       start: string

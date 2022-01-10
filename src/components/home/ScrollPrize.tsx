@@ -1,18 +1,18 @@
-import { Button, Box, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import React, { ReactElement } from "react";
+import { Button, Box, Typography } from "@mui/material"
+import { makeStyles } from "@mui/styles"
+import React, { ReactElement } from "react"
 
 type Prize = {
-  name: string;
-  description: string;
-  _id: string;
-};
+  name: string
+  description: string
+  _id: string
+}
 
 const useStyles = makeStyles((theme) => ({
   allPrizes: {
     display: "flex",
     overflowX: "scroll",
-    flexDirection: "row",
+    flexDirection: "row"
   },
   box: {
     display: "flex",
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "25px",
     textAlign: "center",
     justifyContent: "center",
-    flexShrink: 0,
+    flexShrink: 0
   },
   prizeTitle: {
     fontFamily: "Poppins",
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "22px",
     lineHeight: "33px",
     color: "#AA5418",
-    alignSelf: "center",
+    alignSelf: "center"
   },
   prizeInfo: {
     fontFamily: "Poppins",
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "14px",
     lineHeight: "21px",
     color: "#AA5418",
-    alignSelf: "center",
+    alignSelf: "center"
   },
   prizeSelect: {
     background: "#F7C062",
@@ -54,15 +54,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
     width: "25%", //based on box height and width (need to change if these change)
     height: "20%", //based on box height and width (need to change if these change)
-    alignSelf: "center",
-  },
-}));
+    alignSelf: "center"
+  }
+}))
 
-const ScrollPrize = ({}: //prizeSelectArray
-{
-  // prizeSelectArray: Prize[]
-}): ReactElement => {
-  const classes = useStyles();
+const ScrollPrize = (): ReactElement => {
+  const classes = useStyles()
   //const lengthArray: number = prizeSelectArray.length;
   const prizeSelectArray = [
     { name: "A", description: "A" },
@@ -70,12 +67,12 @@ const ScrollPrize = ({}: //prizeSelectArray
     { name: "C", description: "C" },
     { name: "D", description: "D" },
     { name: "A", description: "A" },
-    { name: "A", description: "A" },
-  ];
+    { name: "A", description: "A" }
+  ]
   return (
     <div className={classes.allPrizes}>
       {prizeSelectArray.map((prize, idx) => {
-        const { name, description } = prize;
+        const { name, description } = prize
         return (
           <Box key={idx} className={classes.box}>
             <div className={classes.prizeTitle}>
@@ -90,10 +87,10 @@ const ScrollPrize = ({}: //prizeSelectArray
               </Button>
             </div>
           </Box>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default ScrollPrize;
+export default ScrollPrize

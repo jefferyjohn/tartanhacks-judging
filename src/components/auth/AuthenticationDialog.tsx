@@ -1,21 +1,14 @@
 import {
-  Collapse,
-  CircularProgress,
-  Link,
-  makeStyles,
-  Snackbar,
-  TextField,
-  Typography,
-  Alert,
-  styled,
-} from "@mui/material";
-import { useRouter } from "next/dist/client/router";
-import NextLink from "next/link";
-import { ReactElement, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import actions from "src/actions";
-import { RootState } from "types/RootState";
-import RectangleButton from "../design/RectangleButton";
+  Alert, CircularProgress, Collapse, Link, Snackbar, styled, TextField,
+  Typography
+} from "@mui/material"
+import { useRouter } from "next/dist/client/router"
+import NextLink from "next/link"
+import { ReactElement, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import actions from "src/actions"
+import { RootState } from "types/RootState"
+import RectangleButton from "../design/RectangleButton"
 
 const Dialog = styled("div")(({ theme }) => ({
   display: "flex",
@@ -26,19 +19,19 @@ const Dialog = styled("div")(({ theme }) => ({
   margin: "0 auto",
   textAlign: "center",
   [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
-    width: "50%",
+    width: "50%"
   },
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
-    width: "80%",
-  },
-}));
+    width: "80%"
+  }
+}))
 
 const RegistrationForm = styled("form")({
   display: "flex",
   flexDirection: "column",
   gap: "1em",
-  width: "100%",
-});
+  width: "100%"
+})
 
 const Header = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
@@ -46,61 +39,59 @@ const Header = styled(Typography)(({ theme }) => ({
   backgroundClip: "text",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
-  marginBottom: "1em",
-}));
+  marginBottom: "1em"
+}))
 
 const SwitchAuthContainer = styled("div")({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  marginTop: "1em",
-});
+  marginTop: "1em"
+})
 
 const StyledLink = styled(Link)({
   "&:hover": {
     textDecoration: "none",
-    filter: "brightness(85%)",
-  },
-});
+    filter: "brightness(85%)"
+  }
+})
 
 const AuthenticationDialog = ({
-  registration = false,
+  registration = false
 }: {
-  registration: boolean;
+  registration: boolean
 }): ReactElement => {
-  const dispatch = useDispatch();
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const dispatch = useDispatch()
+  const router = useRouter()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
-  const errorMessage = useSelector(
-    (state: RootState) => state?.accounts?.error
-  );
+  const errorMessage = useSelector((state: RootState) => state?.accounts?.error)
 
   const register = async () => {
-    setLoading(true);
+    setLoading(true)
     try {
-      await dispatch(actions.auth.register(email, password));
-      router.push("/");
+      await dispatch(actions.auth.register(email, password))
+      router.push("/")
     } catch (err) {
-      console.error(err);
-      setError(true);
+      console.error(err)
+      setError(true)
     }
-    setLoading(false);
-  };
+    setLoading(false)
+  }
   const login = async () => {
-    setLoading(true);
+    setLoading(true)
     try {
-      await dispatch(actions.auth.login(email, password));
-      router.push("/");
+      await dispatch(actions.auth.login(email, password))
+      router.push("/")
     } catch (err) {
-      console.error(err);
-      setError(true);
+      console.error(err)
+      setError(true)
     }
-    setLoading(false);
-  };
+    setLoading(false)
+  }
 
   return (
     <Dialog>
@@ -114,12 +105,12 @@ const AuthenticationDialog = ({
       </Snackbar>
       <RegistrationForm
         onSubmit={(e) => {
-          e.preventDefault();
+          e.preventDefault()
 
           if (registration) {
-            register();
+            register()
           } else {
-            login();
+            login()
           }
         }}
       >
@@ -136,7 +127,7 @@ const AuthenticationDialog = ({
           fullWidth={true}
           value={email}
           onChange={(e) => {
-            setEmail(e.target.value);
+            setEmail(e.target.value)
           }}
         />
         <TextField
@@ -149,7 +140,7 @@ const AuthenticationDialog = ({
           fullWidth={true}
           value={password}
           onChange={(e) => {
-            setPassword(e.target.value);
+            setPassword(e.target.value)
           }}
         />
         <RectangleButton type="submit">
@@ -172,7 +163,7 @@ const AuthenticationDialog = ({
         </SwitchAuthContainer>
       </RegistrationForm>
     </Dialog>
-  );
-};
+  )
+}
 
-export default AuthenticationDialog;
+export default AuthenticationDialog

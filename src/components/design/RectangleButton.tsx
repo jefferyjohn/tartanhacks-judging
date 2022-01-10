@@ -1,6 +1,6 @@
-import { Button } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import React, { ReactElement } from "react";
+import { Button } from "@mui/material"
+import { styled } from "@mui/material/styles"
+import React, { ReactElement } from "react"
 
 const StyledButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.button.main,
@@ -8,20 +8,20 @@ const StyledButton = styled(Button)(({ theme }) => ({
   boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",
   color: "white",
   "&:hover": {
-    backgroundColor: theme.palette.button.focused,
-  },
-}));
+    backgroundColor: theme.palette.button.focused
+  }
+}))
 
 const RectangleButton = ({
   className,
   children,
   type,
-  onClick,
+  onClick
 }: {
-  className?: string;
-  children?: ReactElement | string;
-  type: "button" | "reset" | "submit" | undefined;
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  className?: string
+  children?: ReactElement | string
+  type: "button" | "reset" | "submit" | undefined
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }): ReactElement => {
   return (
     <>
@@ -34,7 +34,7 @@ const RectangleButton = ({
         {children}
       </StyledButton>
     </>
-  );
-};
+  )
+}
 
-export default RectangleButton;
+export default RectangleButton
