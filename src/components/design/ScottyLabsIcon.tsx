@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react"
 
-const ScottyLabsLogo = ({ className }: { className: string }): ReactElement => {
+const ScottyLabsLogo = ({ className }: { className?: string }): ReactElement => {
   return (
     <div className={className}>
       <svg viewBox="0 0 697 550" fill="none">
