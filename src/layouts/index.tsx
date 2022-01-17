@@ -1,2 +1,1 @@
-export { default as DialogLayout } from "./DialogLayout"
 export { default as AuthenticatedLayout } from "./AuthenticatedLayout"

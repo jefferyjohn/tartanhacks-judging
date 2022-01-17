@@ -1,9 +1,9 @@
-import { styled } from "@mui/material";
-import { NextPage } from "next";
-import React, { ReactElement, useEffect } from "react";
-import AuthenticationDialog from "src/components/auth/AuthenticationDialog";
-import ScottyLabsIcon from "src/components/design/ScottyLabsIcon";
-import WaveHeader from "src/components/design/WaveHeader";
+import { styled } from "@mui/material/styles"
+import { NextPage } from "next"
+import React, { ReactElement, useEffect } from "react"
+import AuthenticationDialog from "src/components/auth/AuthenticationDialog"
+import ScottyLabsIcon from "src/components/design/ScottyLabsIcon"
+import WaveHeader from "src/components/design/WaveHeader"
 
 const Dialog = styled("div")(({ theme }) => ({
   width: "100%",
@@ -14,11 +14,11 @@ const Dialog = styled("div")(({ theme }) => ({
   paddingTop: "10em",
   boxSizing: "border-box",
   [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
-    paddingTop: "3em",
-  },
-}));
+    paddingTop: "3em"
+  }
+}))
 
-const ScottyContainer = styled("div")(({ theme }) => ({
+const ScottyContainer = styled("div")({
   zIndex: -1,
   opacity: 0.3,
   bottom: 0,
@@ -27,22 +27,22 @@ const ScottyContainer = styled("div")(({ theme }) => ({
   position: "absolute",
   display: "flex",
   justifyContent: "center",
-  alignItems: "end",
-}));
+  alignItems: "end"
+})
 
 const ScottyIcon = styled(ScottyLabsIcon)(({ theme }) => ({
   position: "relative",
   width: "40%",
   bottom: 0,
   [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
-    width: "100%",
-  },
-}));
+    width: "100%"
+  }
+}))
 
 const LoginPage: NextPage = (): ReactElement => {
   useEffect(() => {
-    window.localStorage.removeItem("accessToken");
-  }, []);
+    window.localStorage.removeItem("accessToken")
+  }, [])
   return (
     <div>
       <WaveHeader />
@@ -53,7 +53,7 @@ const LoginPage: NextPage = (): ReactElement => {
         <AuthenticationDialog registration={false} />
       </Dialog>
     </div>
-  );
-};
+  )
+}
 
-export default LoginPage;
+export default LoginPage

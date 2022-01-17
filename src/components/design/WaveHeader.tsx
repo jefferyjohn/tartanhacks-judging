@@ -1,14 +1,14 @@
-import { Link, makeStyles, Typography, useTheme } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import React, { ReactElement } from "react";
-import NextLink from "next/link";
+import { Link, Typography, useTheme } from "@mui/material"
+import { styled } from "@mui/material/styles"
+import NextLink from "next/link"
+import React, { ReactElement } from "react"
 
 const WaveContainer = styled("div")({
   position: "absolute",
   width: "100%",
   overflow: "hidden",
-  lineHeight: 0,
-});
+  lineHeight: 0
+})
 
 const Title = styled(Typography)(({ theme }) => ({
   position: "absolute",
@@ -20,14 +20,14 @@ const Title = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
     marginLeft: "0.5em",
     marginTop: "0.5em",
-    fontSize: "5em",
+    fontSize: "5em"
   },
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
     marginLeft: "0.7em",
     marginTop: "0.7em",
-    fontSize: "3em",
-  },
-}));
+    fontSize: "3em"
+  }
+}))
 
 const Subtitle = styled(Typography)(({ theme }) => ({
   position: "absolute",
@@ -39,14 +39,14 @@ const Subtitle = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
     marginLeft: "1.7em",
     marginTop: "4em",
-    fontSize: "2em",
+    fontSize: "2em"
   },
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
     marginLeft: "2.5em",
     marginTop: "5.5em",
-    fontSize: "1em",
-  },
-}));
+    fontSize: "1em"
+  }
+}))
 
 const WaveSVG = styled("svg")(({ theme }) => ({
   position: "relative",
@@ -54,15 +54,15 @@ const WaveSVG = styled("svg")(({ theme }) => ({
   height: "250px",
   filter: "drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.2))",
   [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
-    height: "15em",
+    height: "15em"
   },
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
-    height: "10em",
-  },
-}));
+    height: "10em"
+  }
+}))
 
 const WaveHeader = (): ReactElement => {
-  const theme = useTheme();
+  const theme = useTheme()
   return (
     <WaveContainer>
       <NextLink href="/" passHref>
@@ -95,7 +95,7 @@ const WaveHeader = (): ReactElement => {
         </defs>
       </WaveSVG>
     </WaveContainer>
-  );
-};
+  )
+}
 
-export default WaveHeader;
+export default WaveHeader
