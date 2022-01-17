@@ -8,7 +8,7 @@ import { ReactElement, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import actions from "src/actions"
 import { RootState } from "types/RootState"
-import RectangleButton from "../design/RectangleButton"
+import RectangleButton from "src/components/design/RectangleButton"
 
 const Dialog = styled("div")(({ theme }) => ({
   display: "flex",
@@ -35,7 +35,7 @@ const RegistrationForm = styled("form")({
 
 const Header = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
-  backgroundImage: `linear-gradient(180deg, ${theme.palette.gradient.start} 19.64%, ${theme.palette.gradient.end} 69.64%)`,
+  backgroundImage: `linear-gradient(180deg, ${theme.palette.gradient?.start} 19.64%, ${theme.palette.gradient?.end} 69.64%)`,
   backgroundClip: "text",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",

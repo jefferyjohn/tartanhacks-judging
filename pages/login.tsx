@@ -30,14 +30,14 @@ const ScottyContainer = styled("div")({
   alignItems: "end"
 })
 
-// const ScottyIcon = styled(ScottyLabsIcon)(({ theme }) => ({
-//   position: "relative",
-//   width: "40%",
-//   bottom: 0,
-//   [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
-//     width: "100%",
-//   },
-// }));
+const ScottyIcon = styled(ScottyLabsIcon)(({ theme }) => ({
+  position: "relative",
+  width: "40%",
+  bottom: 0,
+  [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
+    width: "100%"
+  }
+}))
 
 const LoginPage: NextPage = (): ReactElement => {
   useEffect(() => {
@@ -47,7 +47,7 @@ const LoginPage: NextPage = (): ReactElement => {
     <div>
       <WaveHeader />
       <ScottyContainer>
-        <ScottyLabsIcon />
+        <ScottyIcon />
       </ScottyContainer>
       <Dialog>
         <AuthenticationDialog registration={false} />
